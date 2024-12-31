@@ -6,6 +6,7 @@ import { CartItem, Cart } from "../models/cart.js";
 import Coupon from "../models/coupon.js";
 import { Recommendation } from "../models/recommendation.js";
 import { getConfig } from "../utils/config.js";
+import { Authentic } from "../models/authentic.js";
 
 const env = getConfig();
 
@@ -23,6 +24,7 @@ export const AppDataSource = new DataSource({
     Coupon,
     Order,
     Recommendation,
+    Authentic,
   ],
   synchronize: true,
   logging: false,
