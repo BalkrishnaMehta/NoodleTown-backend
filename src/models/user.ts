@@ -1,10 +1,18 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  CreateDateColumn,
+  UpdateDateColumn,
+  Generated,
+} from "typeorm";
 import { IsEmail, IsNotEmpty, Matches, MinLength } from "class-validator";
 
 @Entity("users")
 export class User {
-  @PrimaryGeneratedColumn()
-  id!: number;
+  @PrimaryGeneratedColumn("uuid")
+  @Generated("uuid")
+  id!: string;
 
   @Column()
   @IsNotEmpty({ message: "Name is required" })
@@ -26,4 +34,10 @@ export class User {
     }
   )
   password!: string;
+
+  @CreateDateColumn()
+  createdAt!: Date;
+
+  @UpdateDateColumn()
+  updatedAt!: Date;
 }
