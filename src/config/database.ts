@@ -1,16 +1,29 @@
 import "reflect-metadata";
 import { DataSource } from "typeorm";
-import { User } from "../models/user.js";
-import { getConfig } from "../utils/config.js";
+import { Address, Order, User } from "../models/user.js";
 import { Category, Product, Restaurant } from "../models/restaurant.js";
+import { CartItem, Cart } from "../models/cart.js";
+import Coupon from "../models/coupon.js";
 import { Recommendation } from "../models/recommendation.js";
+import { getConfig } from "../utils/config.js";
 
 const env = getConfig();
 
 export const AppDataSource = new DataSource({
   type: "postgres",
   url: env.dbUrl,
-  entities: [User, Restaurant, Category, Product, Recommendation],
+  entities: [
+    User,
+    Restaurant,
+    Category,
+    Product,
+    CartItem,
+    Cart,
+    Address,
+    Coupon,
+    Order,
+    Recommendation,
+  ],
   synchronize: true,
   logging: false,
   ssl: {
