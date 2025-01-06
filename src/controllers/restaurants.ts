@@ -47,7 +47,14 @@ export const getRestaurants = requestHandler(
       ),
     }));
 
-    return res.status(200).json(updatedRestaurants);
+    return res
+      .status(200)
+      .json(
+        APIResponse.success(
+          "Restaurants retrieved successfully",
+          updatedRestaurants
+        )
+      );
   }
 );
 
@@ -86,7 +93,14 @@ export const getRestaurantDetails = requestHandler(
       );
     }
 
-    return res.status(200).json(restaurant);
+    return res
+      .status(200)
+      .json(
+        APIResponse.success(
+          "Restaurant details retrieved successfully",
+          restaurant
+        )
+      );
   }
 );
 
@@ -138,7 +152,14 @@ export const getCategorizedProducts = requestHandler(
       }
     });
 
-    return res.status(200).json(categories);
+    return res
+      .status(200)
+      .json(
+        APIResponse.success(
+          "Categorized products retrieved successfully",
+          categories
+        )
+      );
   }
 );
 
@@ -163,7 +184,14 @@ export const getRestaurantsByServiceType = requestHandler(
       ),
     }));
 
-    return res.status(200).json(updatedRestaurants);
+    return res
+      .status(200)
+      .json(
+        APIResponse.success(
+          "Restaurant by service type retrieved successfully",
+          updatedRestaurants
+        )
+      );
   }
 );
 
@@ -192,7 +220,14 @@ export const getRestaurantsByCuisine = requestHandler(
       ),
     }));
 
-    return res.status(200).json(updatedRestaurants);
+    return res
+      .status(200)
+      .json(
+        APIResponse.success(
+          "Restaurant by cuisine retrieved successfully",
+          updatedRestaurants
+        )
+      );
   }
 );
 
